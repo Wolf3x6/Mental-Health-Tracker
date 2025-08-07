@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness Tracker - Cape Town</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <h1>Mental Wellness Tracker</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#tracker">Mood Tracker</a></li>
+                    <li><a href="#breathing">Breathing Exercise</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Your Mental Wellness Journey Starts Here</h2>
+            <p>A simple tool to help you track your mood, practice mindfulness, and find mental health resources in Cape Town.</p>
+            <a href="#tracker" class="btn">Start Tracking</a>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="quote-container">
+                <p class="quote-text" id="daily-quote">"Mental health is not a destination, but a process. It's about how you drive, not where you're going."</p>
+                <p class="quote-author" id="quote-author">- Noam Shpancer, PhD</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tracker" class="section">
+        <div class="container">
+            <h2 class="section-title">How are you feeling today?</h2>
+            <div class="cards">
+                <div class="card mood-tracker">
+                    <div class="card-header">
+                        <h3>Daily Mood Tracker</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Select your current mood:</p>
+                        <div class="mood-options">
+                            <span class="mood-option" data-mood="very-sad">😢</span>
+                            <span class="mood-option" data-mood="sad">🙁</span>
+                            <span class="mood-option" data-mood="neutral">😐</span>
+                            <span class="mood-option" data-mood="happy">🙂</span>
+                            <span class="mood-option" data-mood="very-happy">😄</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Wellness Activities</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="activities-intro">Select a mood to see suggested activities that might help improve your wellbeing.</p>
+                        <div id="activities-container" class="activities-container">
+                            <!-- Activities will be displayed here based on mood -->
+                        </div>
+                        <p class="suggestion-note">Note: These are just suggestions. Choose what feels right for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="breathing" class="section">
+        <div class="container">
+            <h2 class="section-title">Breathing Exercise</h2>
+            <div class="cards">
+                <div class="card breathing-exercise">
+                    <div class="card-header">
+                        <h3>4-7-8 Breathing Technique</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>This technique helps reduce anxiety and promote relaxation. Click on the circle to start.</p>
+                        <div class="breathing-circle" id="breathing-circle">
+                            <span id="breathing-timer">Ready</span>
+                        </div>
+                        <p id="breathing-instructions">Click the circle to begin the breathing exercise.</p>
+                        <button id="stop-breathing" class="btn" style="display: none;">Stop Exercise</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>How to Practice</h3>
+                    </div>
+                    <div class="card-body">
+                        <ol style="padding-left: 20px;">
+                            <li>Click the circle to start</li>
+                            <li>When circle turns <span style="color: var(--success-color);">green</span>, inhale through your nose for 4 seconds</li>
+                            <li>Hold your breath for 7 seconds (circle remains green)</li>
+                            <li>When circle turns <span style="color: var(--accent-color);">red</span>, exhale through your mouth for 8 seconds</li>
+                            <li>Repeat until you click "Stop Exercise"</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="assessment" class="section">
+    <div class="container">
+        <h2 class="section-title">Mental Health Assessment</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Wellness Check-in</h3>
+                </div>
+                <div class="card-body">
+                    <p>This short assessment can help you reflect on your mental wellbeing. Please answer honestly based on how you've been feeling over the past two weeks.</p>
+                    
+                    <div id="assessment-container">
+                        <div class="assessment-intro">
+                            <p>Take a few moments to complete this 5-question assessment. Your results are confidential and will help provide personalized recommendations.</p>
+                            <button id="start-assessment" class="btn">Start Assessment</button>
+                        </div>
+                        
+                        <div id="assessment-questions" style="display: none;">
+                            <!-- Questions will be dynamically added here -->
+                        </div>
+                        
+                        <div id="assessment-results" style="display: none;">
+                            <!-- Results will be displayed here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>About This Assessment</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>This assessment is based on established mental health screening tools and is designed to help you reflect on your emotional wellbeing.</p>
+                    
+                        <div class="assessment-info">
+                            <h4>Important Notes:</h4>
+                            <ul>
+                                <li>This is <strong>not</strong> a diagnostic tool</li>
+                                <li>It cannot replace professional medical advice</li>
+                                <li>Your results are confidential and not stored</li>
+                                <li>If you're in crisis, please seek immediate help</li>
+                            </ul>
+                        </div>
+                    
+                        <div class="disclaimer">
+                            <p><strong>Disclaimer:</strong> This assessment is for informational purposes only. Always consult with a qualified healthcare professional for diagnosis and treatment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="section">
+        <div class="container">
+            <h2 class="section-title">Mental Health Resources in Cape Town</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Emergency Support</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="resources-list">
+                            <li><a href="https://www.sadag.org/" target="_blank">South African Depression and Anxiety Group (SADAG): 0800 567 567</a></li>
+                            <li><a href="https://www.sadag.org/index.php?option=com_content&view=article&id=1880&Itemid=152" target="_blank">Suicide Crisis Line: 0800 567 567</a></li>
+                            <li><a href="https://lifelinesa.co.za/" target="_blank">Lifeline: 0861 322 322</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Mental Health Services</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="resources-list">
+                            <li><a href="https://capementalhealth.co.za/" target="_blank">Cape Mental Health</a></li>
+                            <li><a href="https://lifelinesa.co.za/" target="_blank">Lifeline Western Cape</a></li>
+                            <li><a href="https://www.safmh.org/" target="_blank">The South African Federation for Mental Health</a></li>
+                            <li><a href="https://www.psychologytoday.com/za/counselling" target="_blank">Find Counselling Near You</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Online Resources</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="resources-list">
+                            <li><a href="https://www.therapyroute.com/therapists/south-africa/cape-town/1" target="_blank">TherapyRoute - Find therapists in Cape Town</a></li>
+                            <li><a href="https://www.mindful.org/" target="_blank">Mindful - Online mindfulness resources</a></li>
+                            <li><a href="https://www.headspace.com/meditation/sleep" target="_blank">Headspace - Meditation and sleep</a></li>
+                            <li><a href="https://www.calm.com/stress-anxiety" target="_blank">Calm - Anxiety and stress reduction</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2023 Mental Wellness Tracker - Cape Town. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p>This website is not a substitute for professional medical advice. If you're in crisis, please contact a healthcare professional immediately.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="notification" class="notification">
+        <span id="notification-text"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
